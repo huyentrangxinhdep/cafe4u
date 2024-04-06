@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "646416216522",
+    "project_id": "cafe4u-db1ba",
+    "storage_bucket": "cafe4u-db1ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646416216522:android:3a73b856230e861040df33",
+        "android_client_info": {
+          "package_name": "com.example.cafe4u"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1r6qaenDLOvPeb0MC5pHPQZNrHkMBF9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

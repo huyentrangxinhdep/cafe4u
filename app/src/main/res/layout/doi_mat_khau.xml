@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroudmain"
+    tools:context=".activity.doi_mat_khau">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sz100dp"
+        android:text="Đổi mật khẩu"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="332dp"
+        android:layout_height="294dp"
+        android:layout_marginTop="@dimen/sz100dp"
+        android:background="@drawable/corner_round"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginTop="@dimen/sz25dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz2dp"
+            android:text="Mật khẩu cũ"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtOldPasswd"
+            android:layout_width="312dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz5dp"
+            android:background="@drawable/cus_textbox"
+            android:ems="10"
+            android:hint="@string/oldpassword"
+            android:inputType="text"
+            android:paddingLeft="@dimen/sz10dp"
+            android:textColorHint="@color/text_hint" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginTop="@dimen/sz5dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz2dp"
+            android:text="Mật khẩu mới"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtNewPasswd"
+            android:layout_width="312dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz5dp"
+            android:background="@drawable/cus_textbox"
+            android:ems="10"
+            android:hint="@string/newpassword"
+            android:inputType="text"
+            android:paddingLeft="@dimen/sz10dp"
+            android:textColorHint="@color/text_hint" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginTop="@dimen/sz5dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz2dp"
+            android:text="Nhập lại mật khẩu mới"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edtRewriteNewPasswd"
+            android:layout_width="312dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/sz10dp"
+            android:layout_marginRight="@dimen/sz10dp"
+            android:layout_marginBottom="@dimen/sz20dp"
+            android:background="@drawable/cus_textbox"
+            android:ems="10"
+            android:hint="@string/rewritenewpassword"
+            android:inputType="text"
+            android:paddingLeft="@dimen/sz10dp"
+            android:textColorHint="@color/text_hint" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sz55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TableRow
+            android:layout_width="296dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:background="@drawable/btn_regis"
+                android:text="Lưu"
+                android:textColor="@color/black"
+                app:backgroundTint="@null" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:background="@drawable/btn_regis"
+                android:text="Hủy"
+                android:textColor="@color/black"
+                app:backgroundTint="@null" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

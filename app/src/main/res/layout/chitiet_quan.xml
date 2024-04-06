@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroudmain"
+    android:orientation="vertical">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@color/backgroudmain">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_Quaylai"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/backgroudmain"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="77dp"
+                android:layout_marginTop="20dp"
+                android:text="Quán B"
+
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="2dp" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:scaleX="1.5"
+        android:src="@drawable/imageshop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/sz15dp"
+        android:paddingTop="@dimen/sz20dp"
+        android:paddingRight="@dimen/sz15dp"
+        android:paddingBottom="@dimen/sz20dp">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/backgroudmain"
+            android:scaleType="fitCenter"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:src="@drawable/baseline_assistant_direction_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/backgroudmain"
+            android:scaleType="fitCenter"
+            android:scaleX="2"
+            android:scaleY="2"
+
+            android:src="@drawable/baseline_edit_square_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/backgroudmain"
+            android:scaleType="fitCenter"
+            android:scaleX="2"
+            android:scaleY="2"
+
+            android:src="@drawable/baseline_bookmarks_24_white" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroudmain"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="@dimen/sz15dp"
+        android:paddingRight="@dimen/sz20dp"
+        android:paddingBottom="@dimen/sz15dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Đánh giá:"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="165dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:layout_marginRight="70dp"
+                android:layout_weight="1"
+
+                android:src="@drawable/rate" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Địa chỉ: Số 1, đường Nguyễn Trãi, Hà Đông, Hà Nội"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Thời gian mở cửa: 7:00-20:00"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Liên hệ: 0123456789"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/sz20dp"
+        android:paddingRight="@dimen/sz20dp"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+
+                android:text="Tất cả đánh giá"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/backgroudmain"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/baseline_filter_alt_white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="User1"
+            android:layout_marginLeft="@dimen/sz5dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:paddingRight="@dimen/sz15dp"
+            android:scaleX="0.8"
+            android:progressBackgroundTint="@color/white"
+            android:progressTint="@color/yellow"
+            android:rating="4.5"
+            android:stepSize="0.5"
+
+            android:scaleY="0.8" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Phục vụ đa dạng các loại đồ uống, từ cà phê, trà sữa đến các loại sinh tố, nước ép. Giá cả hợp lý, chất lượng tốt, phục vụ chu đáo."
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

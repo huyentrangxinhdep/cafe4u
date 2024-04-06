@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sz10dp">10dp</dimen>
+    <dimen name="sz15dp">15dp</dimen>
+    <dimen name="sz20dp">20dp</dimen>
+    <dimen name="sz2dp">2dp</dimen>
+    <dimen name="sz5dp">5dp</dimen>
+    <dimen name="sz25dp">25dp</dimen>
+    <dimen name="sz100dp">100dp</dimen>
+    <dimen name="sz55dp">55dp</dimen>
+    <dimen name="sz12dp">12dp</dimen>
+    <dimen name="sz40dp">40dp</dimen>
+    <dimen name="sz30dp">30dp</dimen>
+    <dimen name="sz355dp">355dp</dimen>
+    <dimen name="sz370dp">370dp</dimen>
+    <dimen name="sz270dp">270dp</dimen>
+    <dimen name="sz48dp">48dp</dimen>
+    <dimen name="sz20sp">20sp</dimen>
+    <dimen name="sz73dp">73dp</dimen>
+    <dimen name="sz25sp">25sp</dimen>
+    <dimen name="sz702dp">702dp</dimen>
+    <dimen name="sz120dp">120dp</dimen>
+    <dimen name="sz350dp">350dp</dimen>
+    <dimen name="sz8dp">8dp</dimen>
+
+</resources>

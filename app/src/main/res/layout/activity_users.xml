@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+
+    android:orientation="vertical"
+    tools:context=".activity.UsersActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="#041F60">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_Quaylai"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:background="#041f60"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="20dp"
+                android:text="NewChat"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/usersRecycleView"
+            android:visibility="gone"
+            android:overScrollMode="never"
+            android:padding="@dimen/_20sdp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:layout_width="@dimen/_25sdp"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_25sdp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/textErrorMessage"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:textColor="@color/backgroudmain"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+</LinearLayout>

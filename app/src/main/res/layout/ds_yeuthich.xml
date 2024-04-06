@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroudmain"
+    android:orientation="vertical">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@color/backgroudmain">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_Quaylai"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/backgroudmain"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sz10dp"
+                android:layout_marginTop="20dp"
+                android:text="Danh sách yêu thích"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnNewCoffe"
+                android:src="@drawable/baseline_control_point_24"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="@dimen/sz20dp"
+                android:layout_marginLeft="@dimen/sz10dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/backgroudmain"
+                android:scaleType="fitCenter" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/white" />
+    <!--end head-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#041F60"
+        android:id="@+id/listFavourite"/>
+
+</LinearLayout>
