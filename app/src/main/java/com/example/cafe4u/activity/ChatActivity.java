@@ -1,16 +1,13 @@
 package com.example.cafe4u.activity;
 
-import static com.example.cafe4u.R.*;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 
-import com.example.cafe4u.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.cafe4u.adapters.ChatAdapter;
 import com.example.cafe4u.databinding.ActivityChatBinding;
 import com.example.cafe4u.models.ChatMessage;
@@ -42,6 +39,7 @@ public class ChatActivity extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversionId = null;
+
 
 
     @Override
@@ -92,6 +90,7 @@ public class ChatActivity extends AppCompatActivity {
         }
         binding.inputMessage.setText(null);
     }
+
 
     private void listenMessages() {
         database.collection(Constants.KEY_COLLECTION_CHAT)
@@ -186,6 +185,8 @@ public class ChatActivity extends AppCompatActivity {
             conversionId = documentSnapshot.getId();
         }
     };
+
+
 
 
 }

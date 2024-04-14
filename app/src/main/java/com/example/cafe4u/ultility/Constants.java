@@ -1,5 +1,7 @@
 package com.example.cafe4u.ultility;
 
+import java.util.HashMap;
+
 public class Constants {
     public static final String KEY_COLLECTION_USERS = "users";
     public static final String KEY_NAME = "name";

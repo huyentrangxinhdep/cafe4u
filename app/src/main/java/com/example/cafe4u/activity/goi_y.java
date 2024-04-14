@@ -27,7 +27,7 @@ public class goi_y extends AppCompatActivity {
         setContentView(R.layout.goi_y);
         mRecycleCafe = findViewById(R.id.listRcm);
         recommentCafe = new ArrayList<>();
-        createCafeList();
+//        createCafeList();
         mCafeAdapter = new ShopAdapter(this,recommentCafe);
         mRecycleCafe.setAdapter(mCafeAdapter);
         mRecycleCafe.setLayoutManager(new LinearLayoutManager(this));
@@ -51,10 +51,10 @@ public class goi_y extends AppCompatActivity {
         btn_Quaylai = findViewById(R.id.btn_Quaylai);
     }
 
-    private void createCafeList() {
-        recommentCafe.add(new Shop(0, "Thor",1,"khong gian nho, phucj vu kem"));
-        recommentCafe.add(new Shop(0,"IronMan",2,"thai do nhan vien tot nhg menu it mon"));
-        recommentCafe.add(new Shop(0,"Hulk",3,"khong gian nho, phucj vu kem"));
-        recommentCafe.add(new Shop(0,"SpiderMan",4,"khong gian nho, phucj vu kem"));
-    }
+//    private void createCafeList() {
+//        recommentCafe.add(new Shop(0, "Thor",1,"khong gian nho, phucj vu kem"));
+//        recommentCafe.add(new Shop(0,"IronMan",2,"thai do nhan vien tot nhg menu it mon"));
+//        recommentCafe.add(new Shop(0,"Hulk",3,"khong gian nho, phucj vu kem"));
+//        recommentCafe.add(new Shop(0,"SpiderMan",4,"khong gian nho, phucj vu kem"));
+//    }
 }

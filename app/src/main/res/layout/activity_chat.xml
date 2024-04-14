@@ -44,9 +44,9 @@
 
             <TextView
                 android:id="@+id/textName"
-                android:layout_width="279dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="Tương tác cộng đồng"
@@ -56,6 +56,26 @@
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/viewSupporter"
+        android:background="@color/backgroudmain"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout2"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/textAvailability"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"
+        android:background="@color/frame"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/black"
+        android:text="Đang truy cập"
+        android:visibility="gone"
+        android:gravity="center"
+        android:padding="@dimen/_2sdp"
+        android:layout_height="wrap_content"/>
 
 
 
@@ -75,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/viewSupporter" />
 
     <ProgressBar
         android:id="@+id/progressBar"

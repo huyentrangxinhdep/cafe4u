@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.cafe4u.R;
 
-public class ShopDetailActivity extends AppCompatActivity {
+public class nhan_xet_khach_hang extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_detail);
+        setContentView(R.layout.activity_nhan_xet_khach_hang);
     }
 }

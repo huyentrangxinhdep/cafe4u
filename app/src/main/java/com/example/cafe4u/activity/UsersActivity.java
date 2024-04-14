@@ -60,9 +60,18 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
                             User user = new User();
                             user.name = queryDocumentSnapshot.getString(Constants.KEY_NAME);
                             user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
-                            user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
+                            //user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
                             user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
                             user.id = queryDocumentSnapshot.getId();
+                            // Kiểm tra xem trường image có giá trị không
+                            String image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
+                            if (image != null && !image.isEmpty()) {
+                                user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE); // Sử dụng hình ảnh từ dữ liệu đã lưu
+                            } else {
+                                // Sử dụng hình ảnh mặc định từ thư mục drawable
+
+                                user.image = "drawable.account_circle_custom"; // Thay "default_image" bằng tên hình ảnh mặc định trong thư mục drawable
+                            }
                             users.add(user);
                         }
                         if (users.size() > 0) {

@@ -6,13 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.cafe4u.R;
-import com.example.cafe4u.activity.ShopDetailActivity;
+import com.example.cafe4u.activity.chitiet_quan;
 import com.example.cafe4u.models.Shop;
 
 
@@ -20,61 +22,56 @@ import java.util.ArrayList;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
 
-    public class ShopViewHolder extends RecyclerView.ViewHolder {
-        private ImageView mImageShop;
-        private TextView mNameShop;
-        private TextView mVoteShop;
-        private TextView mDescribeShop;
+    Context context;
+    ArrayList<Shop> list;
 
-        public ShopViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mImageShop = itemView.findViewById(R.id.imgShop);
-            mNameShop = itemView.findViewById(R.id.nameShop);
-            mVoteShop= itemView.findViewById(R.id.voteShop);
-            mDescribeShop = itemView.findViewById(R.id.describeShop);
-        }
-    }
-    private Context mContext;
-    private ArrayList<Shop> mList;
-
-    public ShopAdapter(Context mContext, ArrayList<Shop> mList) {
-        this.mContext = mContext;
-        this.mList = mList;
+    public ShopAdapter(Context context, ArrayList<Shop> list) {
+        this.context = context;
+        this.list = list;
     }
 
     @NonNull
     @Override
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View heroView = inflater.inflate(R.layout.item_container_shop, parent, false);
-        ShopViewHolder viewHolder = new ShopViewHolder(heroView);
-        return viewHolder;
+        View v = LayoutInflater.from(context).inflate(R.layout.item_container_shop, parent, false);
+        return new ShopViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
-        Shop cafe = mList.get(position);
-        holder.mImageShop.setImageResource(cafe.getImage());
-        holder.mNameShop.setText(cafe.getName());
-        holder.mVoteShop.setText(String.valueOf(cafe.getVote()));
-        holder.mDescribeShop.setText(cafe.getDescribe());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //chuyen den gd chi tiet quan khi nhap vao muc
-                Intent intent = new Intent(mContext, ShopDetailActivity.class);
-                intent.putExtra("cafeImage","0");
-                intent.putExtra("cafeName",cafe.getName());
-                intent.putExtra("cafeVote",cafe.getVote());
-                intent.putExtra("cafeDescribe",cafe.getDescribe());
-                mContext.startActivity(intent);
-            }
-        });
+
+        Shop shop = list.get(position);
+        holder.name.setText(shop.getName());
+        holder.openTime.setText(shop.getOpenTime());
+        holder.address.setText(shop.getAddress());
+        holder.vote.setRating(shop.getVote());
+        // Lấy URL của hình ảnh từ đối tượng Shop
+        String imageUrl = shop.getImageShop();
+
+        // Sử dụng Glide để tải hình ảnh từ URL và hiển thị nó trong ImageView
+        Glide.with(context)
+                .load(imageUrl)
+                .into(holder.imageShop);
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return list.size();
     }
 
+    public static class ShopViewHolder extends RecyclerView.ViewHolder {
+
+        TextView name, openTime, address;
+        ImageView imageShop;
+        RatingBar vote;
+        public ShopViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            name = itemView.findViewById(R.id.nameShop);
+            openTime = itemView.findViewById(R.id.openTimeShop);
+            address = itemView.findViewById(R.id.addressShop);
+            vote = itemView.findViewById(R.id.ratingBarShop);
+            imageShop = itemView.findViewById(R.id.imgShop);
+        }
+    }
 }

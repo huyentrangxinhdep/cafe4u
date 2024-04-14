@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cafe4u.databinding.TaiKhoanBinding;
 import com.example.cafe4u.ultility.Constants;
+import com.example.cafe4u.R;
 import com.example.cafe4u.ultility.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
@@ -51,11 +52,24 @@ public class tai_khoan extends AppCompatActivity {
 
     private void loadUserDetail() {
         binding.textName.setText(preferenceManager.getString(Constants.KEY_NAME));
-        byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        binding.imgProfile.setImageBitmap(bitmap);
         binding.textEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
         binding.textPasswd.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
+        String encodedImage = preferenceManager.getString(Constants.KEY_IMAGE);
+        if (encodedImage != null && !encodedImage.isEmpty()) {
+            // Nếu có, giải mã và hiển thị hình ảnh từ dữ liệu đã lưu
+            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            binding.imgProfile.setImageBitmap(bitmap);
+        } else {
+            // Nếu không có, hiển thị hình ảnh mặc định
+            binding.imgProfile.setImageResource(R.drawable.account_circle_custom); // Thay đổi thành ảnh mặc định của bạn
+        }
+
+//        byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//
+//        binding.imgProfile.setImageBitmap(bitmap);
+
     }
 
     private void showToast(String notice) {

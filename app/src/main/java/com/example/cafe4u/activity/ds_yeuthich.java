@@ -30,7 +30,7 @@ public class ds_yeuthich extends AppCompatActivity {
         setContentView(binding.getRoot());
         mRecycleCafe = findViewById(R.id.listFavourite);
         favouriteCafe = new ArrayList<>();
-        createCafeList();
+//        createCafeList();
         mCafeAdapter = new ShopAdapter(this,favouriteCafe);
         mRecycleCafe.setAdapter(mCafeAdapter);
         mRecycleCafe.setLayoutManager(new LinearLayoutManager(this));
@@ -56,16 +56,16 @@ public class ds_yeuthich extends AppCompatActivity {
 
 
     //laytt tu csdl
-    private void createCafeList() {
-        favouriteCafe.add(new Shop(0, "Thor",1,"khong gian nho, phucj vu kem"));
-        favouriteCafe.add(new Shop(0,"IronMan",2,"thai do nhan vien tot nhg menu it mon"));
-        favouriteCafe.add(new Shop(0,"Hulk",3,"khong gian nho, phucj vu kem"));
-        favouriteCafe.add(new Shop(0,"SpiderMan",4,"khong gian nho, phucj vu kem"));
-        favouriteCafe.add(new Shop(0,"Thor",5,"nhan vien phuc vu kem "));
-        favouriteCafe.add(new Shop(0,"IronMan",4,"10 d k co nhung"));
-        favouriteCafe.add(new Shop(0,"Hulk",3,"thai do nhan vien tot nhg menu it mon"));
-        favouriteCafe.add(new Shop(0,"SpiderMan",2,"khong gian nho, phucj vu kem"));
-        favouriteCafe.add(new Shop(0,"Thor",1,"thai do nhan vien tot nhg menu it mon"));
-        favouriteCafe.add(new Shop(0,"IronMan",2,"khong gian nho, phucj vu kem"));
-    }
+//    private void createCafeList() {
+//        favouriteCafe.add(new Shop(0, "Thor",1,"khong gian nho, phucj vu kem"));
+//        favouriteCafe.add(new Shop(0,"IronMan",2,"thai do nhan vien tot nhg menu it mon"));
+//        favouriteCafe.add(new Shop(0,"Hulk",3,"khong gian nho, phucj vu kem"));
+//        favouriteCafe.add(new Shop(0,"SpiderMan",4,"khong gian nho, phucj vu kem"));
+//        favouriteCafe.add(new Shop(0,"Thor",5,"nhan vien phuc vu kem "));
+//        favouriteCafe.add(new Shop(0,"IronMan",4,"10 d k co nhung"));
+//        favouriteCafe.add(new Shop(0,"Hulk",3,"thai do nhan vien tot nhg menu it mon"));
+//        favouriteCafe.add(new Shop(0,"SpiderMan",2,"khong gian nho, phucj vu kem"));
+//        favouriteCafe.add(new Shop(0,"Thor",1,"thai do nhan vien tot nhg menu it mon"));
+//        favouriteCafe.add(new Shop(0,"IronMan",2,"khong gian nho, phucj vu kem"));
+//    }
 }

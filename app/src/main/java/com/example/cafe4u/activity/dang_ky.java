@@ -19,6 +19,7 @@ import com.example.cafe4u.databinding.DangKyBinding;
 import com.example.cafe4u.ultility.Constants;
 import com.example.cafe4u.ultility.PreferenceManager;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.cafe4u.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -59,6 +60,12 @@ public class dang_ky extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
+        }
+        else {
+            // Hiển thị hình ảnh mặc định nếu người dùng không chọn hình ảnh
+            binding.imageProfile.setImageResource(R.drawable.account_circle_custom);
+            encodedImage = ""; // hoặc null tùy vào cách xử lý của bạn
         }
     });
     private String encodeImage (Bitmap bitmap) {
@@ -81,6 +88,24 @@ public class dang_ky extends AppCompatActivity {
             binding.btnRegister.setVisibility(View.VISIBLE);
         }
     }
+
+    private void checkEmailExistence() {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        String email = binding.edtEmail.getText().toString().trim();
+        database.collection(Constants.KEY_COLLECTION_USERS)
+                .whereEqualTo(Constants.KEY_EMAIL, email)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null && !task.getResult().isEmpty()) {
+                        // Email đã tồn tại trong cơ sở dữ liệu
+//                        showToast("This email is already registered");
+                    } else {
+                        // Email chưa tồn tại trong cơ sở dữ liệu, tiến hành tạo tài khoản mới
+                        signUp();
+                    }
+                });
+    }
+
 
     private void signUp() {
         loading(true);
@@ -110,12 +135,12 @@ public class dang_ky extends AppCompatActivity {
     }
 
     private Boolean isValidSignUpDetail() {
-        if (encodedImage == null) {
-            showToast("Select image");
-            return false;
-        }
+//        if (encodedImage == null) {
+//            showToast("Select image");
+//            return false;
+//        }
 
-        else if (binding.edtNameUser.getText().toString().trim().isEmpty()) {
+        if (binding.edtNameUser.getText().toString().trim().isEmpty()) {
             showToast("Enter name");
             return false;
         }
@@ -140,6 +165,7 @@ public class dang_ky extends AppCompatActivity {
             return false;
         }
         else {
+            checkEmailExistence();
             return true;
         }
     }
@@ -154,7 +180,7 @@ public class dang_ky extends AppCompatActivity {
         });
         binding.btnRegister.setOnClickListener(v -> {
             if (isValidSignUpDetail()) {
-                signUp();
+                checkEmailExistence();
             }
         });
         binding.layoutImage.setOnClickListener(v -> {

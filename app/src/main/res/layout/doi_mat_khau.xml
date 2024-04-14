@@ -113,7 +113,7 @@
 
     <TableLayout
         android:layout_width="310dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginTop="@dimen/sz55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,18 +123,30 @@
             android:layout_width="296dp"
             android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnSave"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:background="@drawable/btn_regis"
-                android:text="Lưu"
-                android:textColor="@color/black"
-                app:backgroundTint="@null" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:animateLayoutChanges="true"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:background="@drawable/btn_regis"
+                    android:text="Lưu"
+                    android:textColor="@color/black"
+                    app:backgroundTint="@null" />
+                <ProgressBar
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"/>
 
-            <TextView
-                android:id="@+id/textView6"
+            </FrameLayout>
+
+            <View
+
                 android:layout_width="110dp"
                 android:layout_height="wrap_content" />
 

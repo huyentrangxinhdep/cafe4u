@@ -1,24 +1,31 @@
 package com.example.cafe4u.models;
 
+import com.google.firebase.firestore.GeoPoint;
+
 public class Shop {
-    int image;
-    String name;
+    String id, name, address, commentId, imageShop, openTime, phoneNumber, styleId;
     int vote;
-    String describe;
+    GeoPoint location;
 
-    public Shop(int image, String name, int vote, String describe) {
-        this.image = image;
+    public Shop(String id, String name, String address, String commentId, String imageShop, String openTime, String phoneNumber, String styleId, int vote, GeoPoint location) {
+        this.id = id;
         this.name = name;
+        this.address = address;
+        this.commentId = commentId;
+        this.imageShop = imageShop;
+        this.openTime = openTime;
+        this.phoneNumber = phoneNumber;
+        this.styleId = styleId;
         this.vote = vote;
-        this.describe = describe;
+        this.location = location;
     }
 
-    public int getImage() {
-        return image;
+    public String getId() {
+        return id;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -29,6 +36,54 @@ public class Shop {
         this.name = name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
+
+    public String getImageShop() {
+        return imageShop;
+    }
+
+    public void setImageShop(String imageShop) {
+        this.imageShop = imageShop;
+    }
+
+    public String getOpenTime() {
+        return openTime;
+    }
+
+    public void setOpenTime(String openTime) {
+        this.openTime = openTime;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getStyleId() {
+        return styleId;
+    }
+
+    public void setStyleId(String styleId) {
+        this.styleId = styleId;
+    }
+
     public int getVote() {
         return vote;
     }
@@ -37,11 +92,11 @@ public class Shop {
         this.vote = vote;
     }
 
-    public String getDescribe() {
-        return describe;
+    public GeoPoint getLocation() {
+        return location;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setLocation(GeoPoint location) {
+        this.location = location;
     }
 }

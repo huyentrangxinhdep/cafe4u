@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
     <LinearLayout
         android:id="@+id/layout_item"
         android:layout_width="match_parent"
@@ -26,26 +29,102 @@
                     android:id="@+id/nameShop"
                     android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:text="Ten quan" />
+                    android:text="Tên quán"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sz20sp" />
 
-                <TextView
-                    android:id="@+id/voteShop"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Danh gia" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/describeShop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mota" />
+                    <TextView
+                        android:id="@+id/danh_gia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sz5dp"
+                        android:text="Đánh giá:"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBarShop"
+                        android:layout_width="245dp"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:progressTint="@android:color/holo_orange_light"
+                        android:rating="5"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4"
+                        android:stepSize="1"
+                        android:layout_marginTop="-12dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteX="0dp" />
+                    <TextView
+                        android:id="@+id/openShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/sz10dp"
+                        android:justificationMode="inter_word"
+                        android:text="Giờ mở cửa: "
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/danh_gia"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/openTimeShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:justificationMode="inter_word"
+                        android:text="7h - 23h"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toEndOf="@id/openShop"
+                        app:layout_constraintTop_toTopOf="@id/openShop"
+                        tools:layout_editor_absoluteY="35dp" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/sz10dp"
+                        android:justificationMode="inter_word"
+                        android:text="Địa chỉ: "
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@id/openShop"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/addressShop"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:justificationMode="inter_word"
+                        android:text="Số 1 đường Trần Phú, Hà Đông, Hà Nội"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/address"
+                        app:layout_constraintTop_toBottomOf="@id/openShop" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/imgShop"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#561742"/>
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="#561742" />
         </LinearLayout>
 
         <LinearLayout
