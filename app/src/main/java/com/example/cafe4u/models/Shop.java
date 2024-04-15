@@ -1,31 +1,26 @@
 package com.example.cafe4u.models;
 
-import com.google.firebase.firestore.GeoPoint;
-
 public class Shop {
-    String id, name, address, commentId, imageShop, openTime, phoneNumber, styleId;
-    int vote;
-    GeoPoint location;
 
-    public Shop(String id, String name, String address, String commentId, String imageShop, String openTime, String phoneNumber, String styleId, int vote, GeoPoint location) {
-        this.id = id;
+    int vote;
+    String name, address, imageShop, openTime, space, styleId;
+
+    public Shop(int vote, String name, String address, String imageShop, String openTime, String space, String styleId) {
+        this.vote = vote;
         this.name = name;
         this.address = address;
-        this.commentId = commentId;
         this.imageShop = imageShop;
         this.openTime = openTime;
-        this.phoneNumber = phoneNumber;
+        this.space = space;
         this.styleId = styleId;
+    }
+
+    public int getVote() {
+        return vote;
+    }
+
+    public void setVote(int vote) {
         this.vote = vote;
-        this.location = location;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -44,14 +39,6 @@ public class Shop {
         this.address = address;
     }
 
-    public String getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(String commentId) {
-        this.commentId = commentId;
-    }
-
     public String getImageShop() {
         return imageShop;
     }
@@ -68,12 +55,12 @@ public class Shop {
         this.openTime = openTime;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getSpace() {
+        return space;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setSpace(String space) {
+        this.space = space;
     }
 
     public String getStyleId() {
@@ -82,21 +69,5 @@ public class Shop {
 
     public void setStyleId(String styleId) {
         this.styleId = styleId;
-    }
-
-    public int getVote() {
-        return vote;
-    }
-
-    public void setVote(int vote) {
-        this.vote = vote;
-    }
-
-    public GeoPoint getLocation() {
-        return location;
-    }
-
-    public void setLocation(GeoPoint location) {
-        this.location = location;
     }
 }
