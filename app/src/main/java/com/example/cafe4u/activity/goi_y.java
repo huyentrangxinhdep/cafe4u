@@ -115,25 +115,25 @@ public class goi_y extends AppCompatActivity {
     // Hàm tính toán và trả về styleID xuất hiện nhiều nhất
     public String getMostFrequentStylesId(List<Shop> history) {
         // Tạo một HashMap để lưu số lần xuất hiện của mỗi stylesID
-        Map<String, Integer> stylesIdCount = new HashMap<>();
+        Map<String, Integer> stylesCount = new HashMap<>();
 
         // Lặp qua tất cả các cửa hàng trong lịch sử tìm kiếm
         for (Shop shop : history) {
-            String stylesId = shop.getStyleId();
+            String styles = shop.getStyle();
             // Kiểm tra xem stylesID này đã được đếm trước đó chưa
-            if (stylesIdCount.containsKey(stylesId)) {
+            if (stylesCount.containsKey(styles)) {
                 // Nếu có, tăng giá trị đếm lên 1
-                stylesIdCount.put(stylesId, stylesIdCount.get(stylesId) + 1);
+                stylesCount.put(styles, stylesCount.get(styles) + 1);
             } else {
                 // Nếu chưa, thêm vào HashMap với giá trị đếm là 1
-                stylesIdCount.put(stylesId, 1);
+                stylesCount.put(styles, 1);
             }
         }
 
         // Tìm stylesID xuất hiện nhiều nhất bằng cách lặp qua HashMap
         String mostFrequentStylesId = null;
         int maxCount = 0;
-        for (Map.Entry<String, Integer> entry : stylesIdCount.entrySet()) {
+        for (Map.Entry<String, Integer> entry : stylesCount.entrySet()) {
             if (entry.getValue() > maxCount) {
                 mostFrequentStylesId = entry.getKey();
                 maxCount = entry.getValue();

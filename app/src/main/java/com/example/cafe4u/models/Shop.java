@@ -5,49 +5,16 @@ import com.google.firebase.firestore.GeoPoint;
 public class Shop {
 
     int vote;
-    String name, address, imageShop, openTime, space, styleId, commentId, shopId;
+    String name, address, imageShop, openTime, style, commentId, shopId;
     GeoPoint location;
 
-
-    public Shop(String name, String address, String imageShop, String openTime, String styleId, String commentId, GeoPoint location) {
+    public Shop(String name, String address, String imageShop, String openTime, String style, String commentId, GeoPoint location) {
         this.name = name;
         this.address = address;
         this.imageShop = imageShop;
         this.openTime = openTime;
-        this.styleId = styleId;
+        this.style = style;
         this.commentId = commentId;
-        this.location = location;
-    }
-
-    public String getShopId() {
-        return shopId;
-    }
-
-    public void setShopId(String shopId) {
-        this.shopId = shopId;
-    }
-
-    public int getVote() {
-        return vote;
-    }
-
-    public void setVote(int vote) {
-        this.vote = vote;
-    }
-
-    public String getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(String commentId) {
-        this.commentId = commentId;
-    }
-
-    public GeoPoint getLocation() {
-        return location;
-    }
-
-    public void setLocation(GeoPoint location) {
         this.location = location;
     }
 
@@ -83,19 +50,27 @@ public class Shop {
         this.openTime = openTime;
     }
 
-    public String getSpace() {
-        return space;
+    public String getStyle() {
+        return style;
     }
 
-    public void setSpace(String space) {
-        this.space = space;
+    public void setStyle(String style) {
+        this.style = style;
     }
 
-    public String getStyleId() {
-        return styleId;
+    public String getCommentId() {
+        return commentId;
     }
 
-    public void setStyleId(String styleId) {
-        this.styleId = styleId;
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
+
+    public GeoPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(GeoPoint location) {
+        this.location = location;
     }
 }
