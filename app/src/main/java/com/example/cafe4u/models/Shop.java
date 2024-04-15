@@ -1,18 +1,30 @@
 package com.example.cafe4u.models;
 
+import com.google.firebase.firestore.GeoPoint;
+
 public class Shop {
 
     int vote;
-    String name, address, imageShop, openTime, space, styleId;
+    String name, address, imageShop, openTime, space, styleId, commentId, shopId;
+    GeoPoint location;
 
-    public Shop(int vote, String name, String address, String imageShop, String openTime, String space, String styleId) {
-        this.vote = vote;
+
+    public Shop(String name, String address, String imageShop, String openTime, String styleId, String commentId, GeoPoint location) {
         this.name = name;
         this.address = address;
         this.imageShop = imageShop;
         this.openTime = openTime;
-        this.space = space;
         this.styleId = styleId;
+        this.commentId = commentId;
+        this.location = location;
+    }
+
+    public String getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(String shopId) {
+        this.shopId = shopId;
     }
 
     public int getVote() {
@@ -21,6 +33,22 @@ public class Shop {
 
     public void setVote(int vote) {
         this.vote = vote;
+    }
+
+    public String getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
+
+    public GeoPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(GeoPoint location) {
+        this.location = location;
     }
 
     public String getName() {

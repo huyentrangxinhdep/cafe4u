@@ -35,6 +35,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class goi_y extends AppCompatActivity {
     private ShopAdapter mShopAdapter;
@@ -58,6 +60,7 @@ public class goi_y extends AppCompatActivity {
         btn_Quaylai = findViewById(R.id.btn_Quaylai);
 
 
+
         if (userId != null) {
             // Gọi phương thức để lấy thông tin lịch sử tìm kiếm
             getSearchHistory(userId);
@@ -75,9 +78,9 @@ public class goi_y extends AppCompatActivity {
                     QuerySnapshot snapshots = task.getResult();
                     ArrayList<Shop> history = new ArrayList<>();
                     for (QueryDocumentSnapshot document : snapshots) {
-                        String shopId = document.getString("shopID");
+                        String shopId = document.getString("shopId");
                         // Truy vấn vào cơ sở dữ liệu để lấy thông tin chi tiết của từng cửa hàng
-                        DocumentReference shopRef = database.collection("shops").document(shopId);
+                        DocumentReference shopRef = database.collection("CafeShop").document(shopId);
                         shopRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -136,11 +139,9 @@ public class goi_y extends AppCompatActivity {
                 maxCount = entry.getValue();
             }
         }
-        System.out.println(mostFrequentStylesId);
+
         return mostFrequentStylesId;
     }
-
-
 
     private void addEvent() {
         btn_Quaylai.setOnClickListener(new View.OnClickListener() {
@@ -153,37 +154,68 @@ public class goi_y extends AppCompatActivity {
     }
 
 
+    private void RecommendShop(String mostFrequentStylesId) {
+        CollectionReference shopRef = database.collection("CafeShop");
+        shopRef.whereEqualTo("styleId", mostFrequentStylesId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<Shop> recommendedShops = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Shop shop = document.toObject(Shop.class);
+                                recommendedShops.add(shop);
+                            }
+//                            displayRecommendedShops(recommendedShops);
+                        } else {
+                            Log.e(TAG, "Error getting recommended shops: ", task.getException());
+                        }
+                    }
+                });
+    }
 
-    // Hàm tính toán và trả về khung giờ mở cửa quán mà người dùng tìm nhiều nhất
-    public String getMostFrequentOpenTime(List<Shop> history) {
-        // Tạo một HashMap để lưu số lần xuất hiện của mỗi khung giờ mở cửa
-        Map<String, Integer> openTimeCount = new HashMap<>();
+    // Hàm tính khoảng cách giữa hai điểm dựa trên vị trí latitude và longitude
+    private double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+        final int R = 6371; // Bán kính trái đất trong đơn vị kilometer
 
-        // Lặp qua từng quán trong lịch sử tìm kiếm
-        for (Shop shop : history) {
-            // Lấy khung giờ mở cửa của quán hiện tại
-            String openTime = shop.getOpenTime();
-            // Nếu khung giờ này đã tồn tại trong HashMap, tăng giá trị tương ứng lên 1
-            if (openTimeCount.containsKey(openTime)) {
-                int count = openTimeCount.get(openTime);
-                openTimeCount.put(openTime, count + 1);
-            } else {
-                // Nếu không tồn tại, thêm khung giờ vào HashMap với số lần xuất hiện là 1
-                openTimeCount.put(openTime, 1);
-            }
+        double latDistance = Math.toRadians(lat2 - lat1);
+        double lonDistance = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
+                * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double distance = R * c;
+
+        return distance;
+    }
+
+    // Hàm tính khoảng cách từ vị trí của người dùng tới từng quán trong danh sách recommendedShops
+    private void calculateDistancesToShops(List<Shop> recommendedShops, double userLatitude, double userLongitude) {
+        SortedMap<Double, Shop> sortedShops = new TreeMap<>(); // Map lưu trữ khoảng cách của từng cửa hàng
+
+        for (Shop shop : recommendedShops) {
+            double shopLatitude = shop.getLocation().getLatitude();
+            double shopLongitude = shop.getLocation().getLongitude();
+
+            // Tính khoảng cách từ vị trí của người dùng tới quán hiện tại
+            double distance = calculateDistance(userLatitude, userLongitude, shopLatitude, shopLongitude);
+
+            // Lưu khoảng cách vào Map với key là ID của cửa hàng
+            sortedShops.put(distance, shop);
         }
 
-        // Tìm khung giờ mở cửa có số lần xuất hiện nhiều nhất
-        String mostFrequentOpenTime = "";
-        int maxCount = 0;
-        for (Map.Entry<String, Integer> entry : openTimeCount.entrySet()) {
-            if (entry.getValue() > maxCount) {
-                maxCount = entry.getValue();
-                mostFrequentOpenTime = entry.getKey();
-            }
-        }
+        ArrayList<Shop> sortedShopList = new ArrayList<>(sortedShops.values());
+        displayRecommendedShops(sortedShopList);
 
-        return mostFrequentOpenTime;
+
+
+
+    }
+    private void displayRecommendedShops(ArrayList<Shop> shops) {
+        mShopAdapter = new ShopAdapter(goi_y.this, shops);
+        recyclerView.setAdapter(mShopAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(goi_y.this));
     }
 
 
