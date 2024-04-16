@@ -62,10 +62,10 @@
 
     <ImageButton
         android:id="@+id/direct_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="50dp"
         android:background="@android:color/transparent"
         android:contentDescription="Direction"
@@ -150,28 +150,79 @@
         app:layout_constraintTop_toBottomOf="@id/line2" />
 
     <TextView
-        android:id="@+id/address"
-        android:layout_width="352dp"
-        android:layout_height="49dp"
+        android:id="@+id/style"
+        android:layout_width="wrap_content"
+        android:layout_height= "wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:text="Địa chỉ: Số 1, đường Nguyễn Trãi, Hà Đông, Hà Nội"
+        android:layout_marginTop="16dp"
+        android:text="Chủ đề quán: "
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rate_text" />
 
     <TextView
+        android:id="@+id/styleShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:text="Cổ điển"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/style"
+        app:layout_constraintTop_toBottomOf="@+id/rate_text" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Địa chỉ: "
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/style" />
+
+    <TextView
+        android:id="@+id/addressShop"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/sz5dp"
+        android:text="Địa chỉ: Số 1, đường Nguyễn Trãi, Hà Đông, Hà Nội"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/address"
+        app:layout_constraintTop_toBottomOf="@+id/style" />
+
+    <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:text="Thời gian mở cửa: 8:00 - 22:00"
+        android:layout_marginTop="5dp"
+        android:text="Thời gian mở cửa: "
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/addressShop" />
+
+    <TextView
+        android:id="@+id/timeShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text=" 8:00 - 22:00"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/time"
+        app:layout_constraintTop_toBottomOf="@+id/addressShop" />
 
     <TextView
         android:id="@+id/contact"
@@ -179,10 +230,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="Liên hệ: 0123456789"
+        android:text="Liên hệ: "
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time"/>
+    <TextView
+        android:id="@+id/contactShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text=" 0123456789"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/contact"
         app:layout_constraintTop_toBottomOf="@+id/time"/>
 
     <Button

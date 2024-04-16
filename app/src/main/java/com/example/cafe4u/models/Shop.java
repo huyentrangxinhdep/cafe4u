@@ -3,19 +3,30 @@ package com.example.cafe4u.models;
 import com.google.firebase.firestore.GeoPoint;
 
 public class Shop {
+    private String shopId, name, address, commentId, imageShop, openTime, phoneNumber, style;
+    private int vote;
+    private GeoPoint location;
 
-    int vote;
-    String name, address, imageShop, openTime, style, commentId, shopId;
-    GeoPoint location;
-
-    public Shop(String name, String address, String imageShop, String openTime, String style, String commentId, GeoPoint location) {
+    public Shop(String shopId, String name, String address, String commentId, String imageShop, String openTime, String phoneNumber, String style, int vote, GeoPoint location) {
+        this.shopId = shopId;
         this.name = name;
         this.address = address;
+        this.commentId = commentId;
         this.imageShop = imageShop;
         this.openTime = openTime;
+        this.phoneNumber = phoneNumber;
         this.style = style;
-        this.commentId = commentId;
+        this.vote = vote;
         this.location = location;
+    }
+    public Shop() {}
+
+    public String getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(String shopId) {
+        this.shopId = shopId;
     }
 
     public String getName() {
@@ -34,6 +45,14 @@ public class Shop {
         this.address = address;
     }
 
+    public String getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
+
     public String getImageShop() {
         return imageShop;
     }
@@ -50,20 +69,28 @@ public class Shop {
         this.openTime = openTime;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getStyle() {
         return style;
     }
 
-    public void setStyle(String style) {
+    public void setStyle(String styleId) {
         this.style = style;
     }
 
-    public String getCommentId() {
-        return commentId;
+    public int getVote() {
+        return vote;
     }
 
-    public void setCommentId(String commentId) {
-        this.commentId = commentId;
+    public void setVote(int vote) {
+        this.vote = vote;
     }
 
     public GeoPoint getLocation() {

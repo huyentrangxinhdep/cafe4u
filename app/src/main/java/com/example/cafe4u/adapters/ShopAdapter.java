@@ -52,6 +52,12 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         Glide.with(context)
                 .load(imageUrl)
                 .into(holder.imageShop);
+        holder.itemView.setOnClickListener(v -> {
+            // Tạo và khởi chạy Intent
+            Intent intent = new Intent(context, chitiet_quan.class);
+            intent.putExtra("shopId", shop.getShopId());  // Đưa shopId vào Intent
+            context.startActivity(intent);
+        });
     }
 
     @Override

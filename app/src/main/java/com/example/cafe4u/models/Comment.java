@@ -1,54 +1,48 @@
 package com.example.cafe4u.models;
 
-public class Comment {
-    public String context, reviewerId, shopId, id;
-    public float rate;
+public class Comment
+{
+    private int img_comment;
+    private String userName, txt_comment;
+    private float ratingBar;
 
-    public Comment(String context, String reviewerId, String shopId, String id, float rate) {
-        this.context = context;
-        this.reviewerId = reviewerId;
-        this.shopId = shopId;
-        this.rate = rate;
-        this.id = id;
+    public Comment(int img_comment, String userName, String txt_comment, float ratingBar) {
+
+        this.img_comment = img_comment;
+        this.userName = userName;
+        this.txt_comment = txt_comment;
+        this.ratingBar = ratingBar;
     }
 
-    public String getContext() {
-        return context;
+    public int getImg_comment() {
+        return img_comment;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public void setImg_comment(int img_comment) {
+        this.img_comment = img_comment;
     }
 
-    public String getReviewerId() {
-        return reviewerId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setReviewerId(String reviewerId) {
-        this.reviewerId = reviewerId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getShopId() {
-        return shopId;
+    public String getTxt_comment() {
+        return txt_comment;
     }
 
-    public void setShopId(String shopId) {
-        this.shopId = shopId;
+    public void setTxt_comment(String txt_comment) {
+        this.txt_comment = txt_comment;
     }
 
-    public float getRate() {
-        return rate;
+    public float getRatingBar() {
+        return ratingBar;
     }
 
-    public void setRate(float rate) {
-        this.rate = rate;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setRatingBar(float ratingBar) {
+        this.ratingBar = ratingBar;
     }
 }

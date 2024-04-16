@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="341dp"
-        android:layout_height="362dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:background="@drawable/corner2"
@@ -55,86 +55,71 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:paddingLeft="@dimen/_15sdp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="120dp"
+                android:layout_width="110dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="Mở cửa"
+
                 android:textColor="@color/white"
                 android:textSize="@dimen/sz20sp" />
 
-            <NumberPicker
-                android:id="@+id/open"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/sz5dp"
-                android:layout_marginRight="@dimen/sz73dp"
-                android:layout_marginBottom="@dimen/sz5dp"
-                android:background="@color/second" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:paddingLeft="@dimen/_10sdp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Đóng cửa"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sz20sp" />
-            <NumberPicker
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/sz5dp"
-                android:layout_marginRight="@dimen/sz73dp"
-                android:layout_marginBottom="@dimen/sz5dp"
+            <Spinner
+                android:id="@+id/openTimeSpinner"
+                android:layout_width="195dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/_10sdp"
                 android:background="@color/second"
                 />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="330dp"
-            android:layout_height="100dp"
-            android:gravity="center"
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:paddingLeft="@dimen/_15sdp"
             android:orientation="horizontal">
+
 
             <TextView
                 android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/sz20dp"
+                android:gravity="center_vertical"
+                android:text="Khong gian"
 
-                android:layout_weight="1"
-                android:text="Không gian"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sz20sp" />
 
             <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="200dp"
+                android:id="@+id/spinnerStyle"
+                android:layout_width="195dp"
                 android:layout_height="40dp"
-
-                android:background="@color/second" />
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@color/second"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
             android:gravity="center">
             <Button
                 android:id="@+id/h_search"
